@@ -887,10 +887,18 @@ body {
 /* --------------------------------------------------------------------------
    5. Testimonials & Client Logos Smooth Carousel
    -------------------------------------------------------------------------- */
+.thsn-element-testimonial-style-2 {
+  position: relative !important;
+}
+
+.thsn-element-testimonial-style-2 .themesion-element-inner {
+  position: relative !important;
+}
+
 .thsn-element-testimonial-style-2 .thsn-element-posts-wrapper {
   overflow: hidden;
   position: relative;
-  min-height: 320px !important;
+  min-height: 280px !important;
 }
 
 .thsn-testimonial-style-2 .themesion-testimonial-wrapper {
@@ -898,7 +906,50 @@ body {
   margin: 0 auto;
   text-align: center;
   position: relative;
-  padding: 20px 15px;
+  padding: 15px 40px;
+}
+
+.thsn-testimonial-style-2 .themesion-box-desc blockquote p {
+  font-family: var(--thsn-font-heading) !important;
+  font-size: 20px !important;
+  line-height: 35px !important;
+  color: #131419 !important;
+  font-weight: 500 !important;
+  margin: 0 auto 20px !important;
+}
+
+.thsn-testimonial-style-2 .themesion-box-star-ratings {
+  color: #fcb900 !important;
+  margin-bottom: 20px !important;
+}
+
+.thsn-testimonial-style-2 .themesion-box-star-ratings i {
+  color: #fcb900 !important;
+  font-size: 15px !important;
+  margin: 0 2px !important;
+}
+
+.thsn-testimonial-style-2 .themesion-box-title {
+  font-family: var(--thsn-font-heading) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #131419 !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.thsn-testimonial-style-2 .themesion-testimonial-detail {
+  font-family: var(--thsn-font-primary) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #8cc63f !important;
+}
+
+.thsn-testimonial-style-2 .thsn-featured-wrapper img {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  margin-right: 15px !important;
 }
 
 .thsn-element-testimonial-style-2 .thsn-ele-testimonial {
@@ -1094,6 +1145,309 @@ body {
 .thsn-search-modal-close:hover {
   transform: rotate(90deg);
   color: #8cc63f;
+}
+
+/* ==========================================================================
+   Custom Indian Testimonials & Carousel Styles
+   ========================================================================== */
+.custom-testimonials-section {
+  position: relative;
+  padding: 95px 0 85px;
+  background-color: #ffffff;
+  background-image: url('../images/pattern.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  clear: both;
+}
+
+.custom-testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.custom-testi-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.custom-testi-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--thsn-font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: #8cc63f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.custom-testi-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #8cc63f;
+}
+
+.custom-testi-title {
+  font-family: var(--thsn-font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: #131419;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Carousel Outer */
+.custom-carousel-outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.custom-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  cursor: grab;
+}
+
+.custom-carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.custom-carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.custom-testi-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-testi-quote-icon {
+  font-family: Georgia, serif;
+  font-size: 80px;
+  line-height: 50px;
+  color: rgba(140, 198, 63, 0.22);
+  font-weight: bold;
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+
+.custom-testi-quote {
+  font-family: var(--thsn-font-heading);
+  font-size: 21px;
+  line-height: 38px;
+  color: #131419;
+  font-weight: 500;
+  max-width: 820px;
+  margin: 0 auto 22px;
+}
+
+.custom-testi-stars {
+  color: #fcb900;
+  font-size: 15px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.custom-testi-author {
+  display: inline-flex;
+  align-items: center;
+  text-align: left;
+}
+
+.custom-testi-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+  border: 2.5px solid #8cc63f;
+  box-shadow: 0 4px 15px rgba(140, 198, 63, 0.25);
+}
+
+.custom-testi-name {
+  font-family: var(--thsn-font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #131419;
+  margin: 0 0 3px;
+}
+
+.custom-testi-role {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #8cc63f;
+  display: block;
+}
+
+.custom-testi-city {
+  font-size: 12px;
+  color: #697177;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+
+.custom-testi-city i {
+  color: #8cc63f;
+  margin-right: 4px;
+  font-size: 11px;
+}
+
+/* Carousel Nav Buttons */
+.custom-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.25s ease;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.custom-carousel-btn.prev-btn {
+  background-color: #131419;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.custom-carousel-btn.next-btn {
+  background-color: #8cc63f;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.custom-carousel-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dots Pagination */
+.custom-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 35px;
+}
+
+.dot-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #d8dde1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot-btn.active {
+  background-color: #8cc63f;
+  width: 26px;
+  border-radius: 12px;
+}
+
+
+
+.client-logo-item img {
+  max-height: 42px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.client-logo-item:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.client-logo-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+  .custom-testi-title {
+    font-size: 32px;
+  }
+
+  .custom-testi-quote {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .client-logo-item {
+    flex: 0 0 33.333%;
+    margin-bottom: 20px;
+  }
+
+  .custom-testi-slide {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-testimonials-section {
+    padding: 60px 0 50px;
+  }
+
+  .custom-testi-title {
+    font-size: 26px;
+  }
+
+  .custom-testi-quote {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .custom-carousel-outer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .custom-carousel-btn {
+    display: none;
+  }
+
+  .client-logo-item {
+    flex: 0 0 50%;
+    padding: 10px;
+  }
+
+  .custom-testi-avatar {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 #backToTop {

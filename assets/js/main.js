@@ -241,4 +241,105 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(nextTestimonial, 5500);
   }
 
+  // =========================================================================
+  // Custom Indian Testimonials Smooth Carousel & Touch Swipe
+  // =========================================================================
+  const track = document.getElementById('customTestiTrack');
+  const viewport = document.getElementById('customTestiViewport');
+  const prevBtn = document.getElementById('customTestiPrev');
+  const nextBtn = document.getElementById('customTestiNext');
+  const dotsContainer = document.getElementById('customTestiDots');
+
+  if (track && viewport) {
+    const slides = track.querySelectorAll('.custom-testi-slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let autoPlayTimer = null;
+
+    function updateCarousel(index) {
+      if (index < 0) currentSlide = totalSlides - 1;
+      else if (index >= totalSlides) currentSlide = 0;
+      else currentSlide = index;
+
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update dots
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.dot-btn');
+        dots.forEach((dot, i) => {
+          if (i === currentSlide) dot.classList.add('active');
+          else dot.classList.remove('active');
+        });
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        updateCarousel(currentSlide - 1);
+        resetAutoPlay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        updateCarousel(currentSlide + 1);
+        resetAutoPlay();
+      });
+    }
+
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.dot-btn');
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          const idx = parseInt(dot.getAttribute('data-index'), 10);
+          updateCarousel(idx);
+          resetAutoPlay();
+        });
+      });
+    }
+
+    // Auto Play every 5 seconds
+    function startAutoPlay() {
+      autoPlayTimer = setInterval(function () {
+        updateCarousel(currentSlide + 1);
+      }, 5000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+
+    startAutoPlay();
+
+    // Pause on hover
+    viewport.addEventListener('mouseenter', function () {
+      clearInterval(autoPlayTimer);
+    });
+    viewport.addEventListener('mouseleave', function () {
+      startAutoPlay();
+    });
+
+    // Touch Swipe Support for Mobile & Tablet
+    let startX = 0;
+    let endX = 0;
+
+    viewport.addEventListener('touchstart', function (e) {
+      startX = e.changedTouches[0].screenX;
+      clearInterval(autoPlayTimer);
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function (e) {
+      endX = e.changedTouches[0].screenX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) updateCarousel(currentSlide + 1);
+        else updateCarousel(currentSlide - 1);
+      }
+      startAutoPlay();
+    }, { passive: true });
+  }
+
 });
