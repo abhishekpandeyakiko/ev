@@ -78,42 +78,68 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // =========================================================================
-  // 3. Search Trigger & Full-Screen Overlay
+  // 3. Single Interactive Search Overlay Controller
   // =========================================================================
   const searchTriggers = document.querySelectorAll('.thsn-header-search-btn a, .search-toggle-btn');
-  const searchOverlay = document.querySelector('.thsn-search-modal-overlay') || document.querySelector('.thsn-header-search-form-wrapper');
-  const searchClose = document.querySelector('.thsn-search-modal-close') || document.querySelector('.thsn-search-close');
+  const searchOverlay = document.querySelector('.thsn-header-search-form-wrapper');
+  const searchClose = document.querySelector('.thsn-header-search-form-wrapper .thsn-search-close');
+  const searchForm = document.querySelector('.thsn-header-search-form-wrapper form');
+  const searchInput = document.querySelector('.thsn-header-search-form-wrapper input[type="search"]');
+
+  function openSearch() {
+    if (searchOverlay) {
+      searchOverlay.classList.add('open');
+      if (searchInput) {
+        setTimeout(() => searchInput.focus(), 200);
+      }
+    }
+  }
+
+  function closeSearch() {
+    if (searchOverlay) {
+      searchOverlay.classList.remove('open');
+    }
+  }
 
   if (searchTriggers.length > 0 && searchOverlay) {
     searchTriggers.forEach(btn => {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
-        searchOverlay.classList.add('active');
-        searchOverlay.classList.add('open');
-        const input = searchOverlay.querySelector('input');
-        if (input) setTimeout(() => input.focus(), 150);
+        e.stopPropagation();
+        openSearch();
       });
     });
   }
 
-  if (searchClose && searchOverlay) {
+  if (searchClose) {
     searchClose.addEventListener('click', function (e) {
       e.preventDefault();
-      searchOverlay.classList.remove('active');
-      searchOverlay.classList.remove('open');
+      e.stopPropagation();
+      closeSearch();
     });
+  }
 
+  if (searchOverlay) {
     searchOverlay.addEventListener('click', function (e) {
       if (e.target === searchOverlay) {
-        searchOverlay.classList.remove('active');
-        searchOverlay.classList.remove('open');
+        closeSearch();
       }
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && (searchOverlay.classList.contains('active') || searchOverlay.classList.contains('open'))) {
-        searchOverlay.classList.remove('active');
-        searchOverlay.classList.remove('open');
+      if (e.key === 'Escape' && searchOverlay.classList.contains('open')) {
+        closeSearch();
+      }
+    });
+  }
+
+  if (searchForm) {
+    searchForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const query = searchInput ? searchInput.value.trim() : '';
+      if (query) {
+        alert('Searching for: "' + query + '" across Grevo EV models & accessories...');
+        closeSearch();
       }
     });
   }

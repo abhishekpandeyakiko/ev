@@ -508,14 +508,14 @@ body {
 
 .sr7-round-glow {
   position: absolute !important;
-  right: -50px !important;
+  right: -220px !important;
   bottom: -30px !important;
   width: 580px !important;
   height: 580px !important;
   z-index: 2 !important;
   opacity: 0.95 !important;
   pointer-events: none !important;
-  animation: rotateRoundGlow 40s linear infinite !important;
+  /* animation: rotateRoundGlow 40s linear infinite !important; */
 }
 
 @keyframes rotateRoundGlow {

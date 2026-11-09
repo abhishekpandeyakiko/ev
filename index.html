@@ -909,15 +909,14 @@
 				<div id="content" class="site-content container">
 
 					<div class="thsn-header-search-form-wrapper">
-						<div class="thsn-search-close"><i class="thsn-base-icon-cancel"></i></div>
-						<form role="search" method="get" class="search-form"
-							action="https://grevo-demo.pbminfotech.com/demo2/">
-							<label for="search-form-6af17ddf90875">
+						<div class="thsn-search-close" aria-label="Close search"><i class="thsn-base-icon-cancel"></i></div>
+						<form role="search" method="get" class="search-form" action="#">
+							<label for="search-input-field">
 								<span class="screen-reader-text">Search for:</span>
 							</label>
-							<input type="search" id="search-form-6af17ddf90875" class="search-field"
-								placeholder="Search &hellip;" value="" name="s" />
-							<button type="submit" class="search-submit" title="Search"><span
+							<input type="search" id="search-input-field" class="search-field"
+								placeholder="Search electric vehicles, chargers &amp; more..." value="" name="s" autocomplete="off" />
+							<button type="submit" class="search-submit" title="Search"><i class="thsn-base-icon-search-1"></i><span
 									class="screen-reader-text">Search</span></button>
 						</form>
 					</div>
@@ -2727,16 +2726,6 @@
 		SR7.E.v6v7ids ??= {}
 		SR7.E.v6v7ids = JSON.parse('{\"n\":{\"2\":2},\"s\":{\"2\":4}}');
 	</script>
-
-	<!-- Fullscreen Search Overlay -->
-	<div class="thsn-search-modal-overlay">
-		<div class="thsn-search-modal-box">
-			<button class="thsn-search-modal-close" aria-label="Close search">&times;</button>
-			<form role="search" method="get" action="#">
-				<input type="search" placeholder="Type words and hit enter..." name="s" autocomplete="off" />
-			</form>
-		</div>
-	</div>
 
 	<!-- Back to Top Floating Button -->
 	<a href="#" id="backToTop" title="Back to Top"><i class="fa fa-angle-up"></i></a>
