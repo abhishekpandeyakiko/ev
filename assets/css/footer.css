@@ -1,3 +1,6 @@
+/* ==========================================================================
+   3. FOOTER COMPONENT (Widgets, Newsletter, Social Links, Back to Top)
+   ========================================================================== */
 :root {
     --thsn-grevo-global-color: #8cc63f;
     --thsn-grevo-secondary-color: #131419;
@@ -1312,4 +1315,133 @@ textarea:focus,
         flex: 0 0 var(--thsn-grevo-footer-4-col-width);
         max-width: var(--thsn-grevo-footer-4-col-width)
     }
+}
+
+
+.thsn-footer-section {
+    position: relative;
+}
+
+.thsn-footer-widget-area {
+    padding: 80px 0 40px;
+}
+
+.thsn-footer-widget .widget-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.thsn-footer-widget p {
+    color: #a0a5aa;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.thsn-footer-newsletter h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 15px 0 20px;
+}
+
+.thsn-footer-newsletter .thsn-base-icon-mail-box {
+    font-size: 40px;
+    color: #8cc63f;
+}
+
+.thsn-footer-newsletter input[type="email"] {
+    background: #1c1d24;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.thsn-footer-newsletter button[type="submit"] {
+    background: #8cc63f;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.thsn-footer-newsletter button[type="submit"]:hover {
+    background: #7bb532;
+}
+
+.thsn-footer-text-area {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0;
+    font-size: 14px;
+    color: #888e94;
+}
+
+.thsn-footer-text-area a {
+    color: #8cc63f;
+    text-decoration: none;
+}
+
+.thsn-footer-text-area .thsn-social-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.thsn-footer-text-area .thsn-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.thsn-footer-text-area .thsn-social-links a:hover {
+    background: #8cc63f;
+}
+
+#backToTop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: #8cc63f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(140, 198, 63, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background-color: #131419;
+    transform: translateY(-3px);
 }
