@@ -1157,7 +1157,7 @@ textarea:focus,
     }
 
     body:not(.thsn-max-mega-menu-override) .thsn-navbar div>ul>li>a {
-        margin: 0 20px;
+        margin: 0 0px;
         -webkit-transition: all .500s ease-in-out;
         transition: all .500s ease-in-out
     }
