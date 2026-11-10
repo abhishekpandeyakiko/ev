@@ -1317,6 +1317,36 @@ textarea:focus,
     }
 }
 
+.thsn-footer-style-2 .thsn-footer-text-inner {
+    background: #000;
+    padding: 45px 60px;
+    padding-right: 0;
+    border-radius: 50px 0 0 0;
+    position: relative;
+    color: #bbbbbb;
+}
+
+.thsn-footer-style-2 .thsn-footer-text-inner:after {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    height: 100%;
+    width: 2000px;
+    background: #000;
+    z-index: -1;
+}
+
+.thsn-footer-style-2 .thsn-footer-section:before {
+    border-radius: 0 50px 0 0;
+    overflow: hidden;
+}
+
+.thsn-footer-style-2.site-footer .thsn-footer-section:before,
+.thsn-footer-style-2.site-footer {
+    background-color: transparent !important;
+}
+
 
 .thsn-footer-section {
     position: relative;
@@ -1352,9 +1382,9 @@ textarea:focus,
 }
 
 .thsn-footer-newsletter input[type="email"] {
-    background: #1c1d24;
+    background: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    color: #1c1d24;
     padding: 12px 18px;
     border-radius: 4px;
     width: 100%;
@@ -1362,23 +1392,27 @@ textarea:focus,
 }
 
 .thsn-footer-newsletter button[type="submit"] {
-    background: #8cc63f;
-    color: #ffffff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 4px;
+    margin-top: 20px;
+    padding: 20px 45px;
+    border-radius: 30px 0px;
+    font-family: Quicksand, sans-serif;
     font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-style: normal;
+    background-color: black;
 }
 
 .thsn-footer-newsletter button[type="submit"]:hover {
-    background: #7bb532;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 30px 0px 0px;
 }
 
 .thsn-footer-text-area {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 24px 0;
+
     font-size: 14px;
     color: #888e94;
 }
@@ -1390,6 +1424,7 @@ textarea:focus,
 
 .thsn-footer-text-area .thsn-social-links {
     display: flex;
+    justify-content: flex-end;
     gap: 12px;
     list-style: none;
     margin: 0;
@@ -1414,7 +1449,7 @@ textarea:focus,
 
 #backToTop {
     position: fixed;
-    right: 30px;
+    right: 8px;
     bottom: 30px;
     width: 48px;
     height: 48px;
