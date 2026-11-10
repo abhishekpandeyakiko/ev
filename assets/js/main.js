@@ -175,6 +175,187 @@ document.addEventListener('DOMContentLoaded', function () {
   loadHeaderComponent();
 
   // =========================================================================
+  // 0b. Footer Component Loader & Fallback
+  // =========================================================================
+  const FOOTER_FALLBACK = `<!-- Footer Component -->
+<footer id="colophon"
+	class="thsn-footer-section site-footer thsn-footer-style-2 thsn-text-color-white thsn-bg-color-blackish thsn-footer-menu-yes thsn-footer-widget-yes">
+	<div class="thsn-footer-section footer-wrap thsn-footer-widget-area thsn-bg-color-transparent">
+		<div class="container">
+			<div class="row">
+				<div class="thsn-footer-widget thsn-footer-widget-col-1 col-md-6 col-lg-3">
+					<aside id="text-2"
+						class="widget-odd widget-last widget-first widget-1 thsn-footer-news widget widget_text grevo_widget grevo_widget_count_1">
+						<div class="textwidget">
+							<form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-12722" method="post"
+								data-id="12722" data-name="Newsletter">
+								<div class="mc4wp-form-fields">
+									<div class="thsn-footer-newsletter">
+										<i aria-hidden="true"
+											class="thsn-industrey-icon thsn-base-icon-mail-box"></i>
+										<h4>
+											Sign up for Electric Car,news &#38; inslights
+										</h4>
+										<div class="thsn-footer-newsletter-form">
+											<label>Email address</label>
+											<input type="email" name="EMAIL" placeholder="Email address"
+												required="">
+											<button type="submit"
+												value="Sign up"><span>Subscribe</span></button>
+										</div>
+									</div>
+								</div><label style="display: none !important;">Leave this field empty if
+									you&#039;re human: <input type="text" name="_mc4wp_honeypot" value=""
+										tabindex="-1" autocomplete="off" /></label><input type="hidden"
+									name="_mc4wp_timestamp" value="1794211295" /><input type="hidden"
+									name="_mc4wp_form_id" value="12722" /><input type="hidden"
+									name="_mc4wp_form_element_id" value="mc4wp-form-1" />
+								<div class="mc4wp-response"></div>
+							</form>
+						</div>
+					</aside>
+				</div>
+				<div class="thsn-footer-widget thsn-footer-widget-col-2 col-md-6 col-lg-3">
+					<aside id="text-3"
+						class="widget-odd widget-last widget-first widget-1 widget widget_text grevo_widget grevo_widget_count_2">
+						<h2 class="widget-title">Grevo WP Theme</h2>
+						<div class="textwidget">
+							<p>A leading developer of A-grade commercial, electric car and bike projects in
+								USA. Since its foundation the company has doubled its turnover year on year,
+								with its staff numbers.<br />
+								<a class="btn-arrow" href="#"><span>Get a quote</span></a>
+							</p>
+						</div>
+					</aside>
+				</div>
+				<div class="thsn-footer-widget thsn-footer-widget-col-3 col-md-6 col-lg-3">
+					<aside id="nav_menu-1"
+						class="widget-odd widget-last widget-first widget-1 widget widget_nav_menu grevo_widget grevo_widget_count_3">
+						<h2 class="widget-title">Company info</h2>
+						<div class="menu-information-container">
+							<ul id="menu-information" class="menu">
+								<li id="menu-item-31256"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31256">
+									<a href="#">About Us</a>
+								</li>
+								<li id="menu-item-31261"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31261">
+									<a href="#">Our Projects</a>
+								</li>
+								<li id="menu-item-31262"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31262">
+									<a href="#">Meet Our Team</a>
+								</li>
+								<li id="menu-item-31267"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31267">
+									<a href="#">News &#038; Media</a>
+								</li>
+								<li id="menu-item-32294"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32294">
+									<a href="#">Contact Us</a>
+								</li>
+								<li id="menu-item-31268"
+									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31268">
+									<a href="#">Careers</a>
+								</li>
+							</ul>
+						</div>
+					</aside>
+				</div>
+				<div class="thsn-footer-widget thsn-footer-widget-col-4 col-md-6 col-lg-3">
+					<aside id="text-4"
+						class="widget-odd widget-last widget-first widget-1 widget widget_text grevo_widget grevo_widget_count_4">
+						<h2 class="widget-title">Quick Contact</h2>
+						<div class="textwidget">
+							<p>2307 Beverley Rd Brooklyn, New York 11226 United States.</p>
+							<p>If you have any questions or need help, feel free to contact with our team.</p>
+							<h3 class="footer-phone">(002) 01061245741</h3>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="thsn-footer-section thsn-footer-text-area thsn-bg-color-transparent">
+		<div class="container">
+			<div class="thsn-footer-text-inner">
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<div class="thsn-footer-menu-area">
+							<div class="menu-quick-links-container">
+								<ul class="thsn-footer-menu">
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31259">
+										<a href="#">Where to Find Us</a>
+									</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31263">
+										<a href="#">Terms of Payment</a>
+									</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31260">
+										<a href="#">Stats Element</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="thsn-footer-copyright-text-area"> Copyright © 2021 <a
+								href="https://grevo-demo.pbminfotech.com/demo1">Grevo</a>, All Rights Reserved.
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="thsn-footer-menu-area">
+							<ul class="thsn-social-links">
+								<li class="thsn-social-li thsn-social-facebook"><a href="#" target="_blank"><span><i
+												class="thsn-base-icon-facebook-squared"></i></span></a></li>
+								<li class="thsn-social-li thsn-social-twitter"><a href="#" target="_blank"><span><i
+												class="thsn-base-icon-twitter-x"></i></span></a></li>
+								<li class="thsn-social-li thsn-social-youtube"><a href="#" target="_blank"><span><i
+												class="thsn-base-icon-youtube-play"></i></span></a></li>
+								<li class="thsn-social-li thsn-social-linkedin"><a href="#" target="_blank"><span><i
+												class="thsn-base-icon-linkedin-squared"></i></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>`;
+
+  async function loadFooterComponent() {
+    const footerContainer = document.getElementById('site-footer-component');
+    if (footerContainer && !footerContainer.innerHTML.trim()) {
+      try {
+        const response = await fetch('components/footer.html');
+        if (response.ok) {
+          footerContainer.innerHTML = await response.text();
+        } else {
+          footerContainer.innerHTML = FOOTER_FALLBACK;
+        }
+      } catch (e) {
+        // Fallback for file:// protocol or offline
+        footerContainer.innerHTML = FOOTER_FALLBACK;
+      }
+    }
+    bindFooterEvents();
+  }
+
+  function bindFooterEvents() {
+    const forms = document.querySelectorAll('.mc4wp-form, .footer-newsletter-form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const input = form.querySelector('input[type="email"]');
+        if (input && input.value) {
+          alert('Thank you for subscribing to Grevo Electric Vehicle updates!');
+          input.value = '';
+        }
+      });
+    });
+  }
+
+  // Load footer component immediately
+  loadFooterComponent();
+
+  // =========================================================================
   // 1. Back to top button
   // =========================================================================
   const backToTopBtn = document.getElementById('backToTop');
@@ -320,20 +501,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // =========================================================================
-  // 6. Newsletter Subscription Form Handler
-  // =========================================================================
-  const forms = document.querySelectorAll('.mc4wp-form, .footer-newsletter-form');
-  forms.forEach(form => {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const input = form.querySelector('input[type="email"]');
-      if (input && input.value) {
-        alert('Thank you for subscribing to Grevo Electric Vehicle updates!');
-        input.value = '';
-      }
-    });
-  });
 
   // =========================================================================
   // Testimonial Single Slide Carousel Controller

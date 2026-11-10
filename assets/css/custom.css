@@ -44,7 +44,8 @@ body {
   box-shadow: none !important;
 }
 
-#site-header-component {
+#site-header-component,
+#site-footer-component {
   display: contents !important;
 }
 
