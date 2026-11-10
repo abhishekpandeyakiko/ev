@@ -1,18 +1,3 @@
-/**
- * ============================================================================
- * Grevo EV Website - Main JavaScript (Concise & Modular)
- * ============================================================================
- * 1. Component Loader (Header & Footer)
- * 2. Sticky Header & Mobile Navigation (Drawer, submenus, sticky on scroll)
- * 3. Search Popup Modal (Open, close, Escape key, submit)
- * 4. Animated Counters (245m, 220+, 50k, 85%)
- * 5. Testimonials Carousel (Auto-slide, dots, prev/next, mobile swipe)
- * 6. Back-to-Top Button (Smooth scroll)
- * 7. Newsletter Form (Subscribe handler)
- * 8. Full-Width Stretched Sections & Background Images
- * ============================================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
@@ -25,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch(file);
       if (res.ok) el.innerHTML = await res.text();
-    } catch (_) {}
+    } catch (_) { }
     if (callback) callback();
   };
 
