@@ -28877,8 +28877,7 @@ select::-ms-expand {
 }
 
 .page #content {
-    padding-top: 100px;
-    padding-bottom: 100px
+    padding: 0px;
 }
 
 .page.thsn-sidebar-no.elementor-page #content {

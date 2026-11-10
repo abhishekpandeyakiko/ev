@@ -34,6 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
       masthead?.classList.toggle('is-sticky', isSticky);
     }, { passive: true });
 
+    // Set active nav menu item based on current page
+    const currentPath = window.location.pathname.toLowerCase();
+    document.querySelectorAll('#thsn-top-menu > li').forEach(li => li.classList.remove('current-menu-item'));
+    if (currentPath.includes('about')) {
+      document.getElementById('menu-item-about')?.classList.add('current-menu-item');
+    } else if (currentPath.includes('product')) {
+      document.getElementById('menu-item-products')?.classList.add('current-menu-item');
+    } else if (currentPath.includes('contact')) {
+      document.getElementById('menu-item-contact')?.classList.add('current-menu-item');
+    } else {
+      document.getElementById('menu-item-home')?.classList.add('current-menu-item');
+    }
+
     // Mobile Hamburger Drawer Toggle
     menuToggle?.addEventListener('click', (e) => {
       e.preventDefault();

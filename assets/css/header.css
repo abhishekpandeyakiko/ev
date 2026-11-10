@@ -608,7 +608,7 @@ body {
 
 .site-title .thsn-main-logo {
   display: inline-block !important;
-  max-height: 42px !important;
+  max-height: 56px !important;
   width: auto !important;
 }
 
@@ -705,6 +705,8 @@ body {
 
 .thsn-main-header-area.is-sticky #thsn-top-menu>li>a {
   color: #131419 !important;
+  margin: 0px;
+  height: 10px !important;
 }
 
 .thsn-main-header-area.is-sticky #thsn-top-menu>li:hover>a {
