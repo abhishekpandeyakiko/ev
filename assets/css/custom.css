@@ -75,7 +75,6 @@ body {
   height: 75px !important;
   background: transparent !important;
   border-bottom: none !important;
-  box-shadow: none !important;
   transition: all 0.3s ease;
 }
 
@@ -197,6 +196,7 @@ body {
   #thsn-top-menu>li {
     padding: 0 12px !important;
   }
+
   #thsn-top-menu>li>a {
     font-size: 14px !important;
   }
@@ -389,6 +389,7 @@ body {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -433,6 +434,7 @@ body {
 
 /* Hide conflicting left social elements on screens < 1500px to maintain pristine spacing */
 @media (max-width: 1500px) {
+
   .site-header.thsn-header-style-3 .thsn-social-links,
   .site-header.thsn-header-style-3 .thsn-social-label {
     display: none !important;
@@ -1724,4 +1726,35 @@ body {
     max-height: 280px !important;
     position: absolute !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   8. Full Width Layout & Stretched Sections Protection
+   -------------------------------------------------------------------------- */
+#content.site-content,
+.site-content-wrap,
+.site-content-contain,
+.site-content.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.elementor-section.elementor-top-section {
+  width: 100% !important;
+}
+
+.elementor-section.elementor-section-stretched {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Ensure all Elementor backgrounds remain visible */
+.e-con.e-parent,
+.e-con.e-parent * {
+  /* Prevent any background stripping */
 }

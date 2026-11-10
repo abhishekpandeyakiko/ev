@@ -1,7 +1,7 @@
 /**
  * Grevo Demo 2 - Interactive Main Scripts
  * Handles Sticky Navbar, Mobile Navigation Drawer, Search Modal,
- * Animated Counters (85%, 650m, 564+, 125k), Swiper Carousels, Smooth Scroll
+ * Animated Counters (85%, 650m, 564+, 125k), Back-to-Top, Smooth Scroll
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -465,45 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', initCounters, { passive: true });
 
   // =========================================================================
-  // 5. Testimonials & Client Logos Smooth Carousel
-  // =========================================================================
-  if (typeof Swiper !== 'undefined') {
-    // Check if Swiper containers exist
-    const testSwiperEl = document.querySelector('.testimonials-swiper');
-    if (testSwiperEl) {
-      new Swiper('.testimonials-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: { delay: 4500, disableOnInteraction: false },
-        pagination: { el: '.testimonials-pagination', clickable: true },
-        navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
-        breakpoints: {
-          768: { slidesPerView: 2, spaceBetween: 24 },
-          1200: { slidesPerView: 3, spaceBetween: 30 }
-        }
-      });
-    }
-
-    const clientSwiperEl = document.querySelector('.clients-swiper');
-    if (clientSwiperEl) {
-      new Swiper('.clients-swiper', {
-        slidesPerView: 2,
-        spaceBetween: 25,
-        loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
-        breakpoints: {
-          480: { slidesPerView: 3, spaceBetween: 30 },
-          768: { slidesPerView: 4, spaceBetween: 40 },
-          992: { slidesPerView: 6, spaceBetween: 50 }
-        }
-      });
-    }
-  }
-
-
-  // =========================================================================
-  // Testimonial Single Slide Carousel Controller
+  // 5. Testimonial Single Slide Carousel Controller
   // =========================================================================
   const testArticles = document.querySelectorAll('.thsn-element-testimonial-style-2 .thsn-ele-testimonial');
   if (testArticles.length > 0) {
@@ -657,4 +619,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
+  // =========================================================================
+  // 6. Elementor Background Lazyload & Section Stretch Handler
+  // =========================================================================
+  function initLazyloadBackgrounds() {
+    const targets = document.querySelectorAll('.e-con.e-parent, [class*="elementor-section"]');
+    targets.forEach(el => {
+      el.classList.add('e-lazyloaded');
+    });
+  }
+  initLazyloadBackgrounds();
+  window.addEventListener('load', initLazyloadBackgrounds);
+
+  function stretchSections() {
+    const stretchedSections = document.querySelectorAll('.elementor-section-stretched');
+    const windowWidth = document.documentElement.clientWidth;
+    stretchedSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const currentLeft = rect.left;
+      section.style.position = 'relative';
+      section.style.left = `-${currentLeft}px`;
+      section.style.boxSizing = 'border-box';
+      section.style.width = `${windowWidth}px`;
+    });
+  }
+  stretchSections();
+  window.addEventListener('resize', stretchSections, { passive: true });
+
 });
+
