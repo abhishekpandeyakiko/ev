@@ -1376,9 +1376,21 @@ textarea:focus,
     margin: 15px 0 20px;
 }
 
+/* Mailbox icon in newsletter box */
+.thsn-footer-news i,
 .thsn-footer-newsletter .thsn-base-icon-mail-box {
-    font-size: 40px;
-    color: #8cc63f;
+    font-size: 80px !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    margin-bottom: 20px !important;
+    vertical-align: middle;
+}
+.thsn-footer-newsletter .thsn-base-icon-mail-box:before {
+    font-family: 'themesion-base-icons' !important;
+    color: #ffffff !important;
+    font-size: 80px !important;
+    line-height: 1 !important;
 }
 
 .thsn-footer-newsletter input[type="email"] {
