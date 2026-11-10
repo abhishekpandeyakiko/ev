@@ -28712,7 +28712,7 @@ select::-ms-expand {
 }
 
 .thsn-bg-color-globalcolor.thsn-title-bar-wrapper:before {
-    background-color: rgba(var(--thsn-grevo-global-color-rgb), 0.50)
+    background-color: rgba(var(--thsn-grevo-global-color-rgb), 0.50);
 }
 
 .thsn-title-bar-wrapper.thsn-bg-color-gradientcolor:before {
