@@ -8,25 +8,178 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   // =========================================================================
-  // 1. Sticky Navigation Header
+  // 0. Header Component Loader & Fallback
   // =========================================================================
-  const mainHeader = document.querySelector('.thsn-main-header-area');
-  const masthead = document.getElementById('masthead');
-  const backToTopBtn = document.getElementById('backToTop');
+  const HEADER_FALLBACK = `<!-- Header Component -->
+<div class="thsn-header-overlay">
+	<div class="thsn-header-height-wrapper">
+		<div
+			class="thsn-main-header-area thsn-sticky-logo-yes thsn-responsive-logo-yes thsn-responsive-header-bgcolor-white thsn-header-wrapper thsn-bg-color-globalcolor">
+			<div class="container-full">
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="thsn-logo-menuarea">
+						<div class="site-branding thsn-logo-area">
+							<div class="wrap">
+								<h1 class="site-title"><a href="index.html"
+										rel="home"><span class="site-title-text">Grevo Demo2 - Electric
+											Vehicle Charging WordPress Theme</span><img
+											class="thsn-main-logo" src="assets/images/logo-white.svg"
+											alt="Grevo Demo2" title="Grevo Demo2" /><img
+											class="thsn-sticky-logo" src="assets/images/grevo-logo.svg"
+											alt="Grevo Demo2" title="Grevo Demo2" /><img
+											class="thsn-responsive-logo" src="assets/images/logo-white.svg"
+											alt="Grevo Demo2" title="Grevo Demo2" /></a></h1>
+							</div><!-- .wrap -->
+						</div><!-- .site-branding -->
+						<div class="navigation-top">
+							<button id="menu-toggle" class="nav-menu-toggle">
+								<i class="thsn-base-icon-menu-1"></i>
+							</button>
+							<div class="thsn-mobile-menu-bg"></div>
+							<div class="wrap">
+								<nav id="site-navigation"
+									class="main-navigation thsn-navbar  thsn-main-active-color-secondarycolor thsn-dropdown-active-color-globalcolor"
+									aria-label="Top Menu">
+									<div class="menu-main-menu-container">
+										<ul id="thsn-top-menu" class="menu">
+											<li id="menu-item-home" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item">
+												<a href="index.html">Home</a>
+											</li>
+											<li id="menu-item-about" class="menu-item menu-item-type-custom menu-item-object-custom">
+												<a href="https://grevo-demo.pbminfotech.com/demo2/about-us/">About</a>
+											</li>
+											<li id="menu-item-products" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+												<a href="https://grevo-demo.pbminfotech.com/demo2/shop/">Products</a>
+												<ul class="sub-menu">
+													<li class="menu-item"><a href="https://grevo-demo.pbminfotech.com/demo2/service/electric-car-sale/">Electric Scooters</a></li>
+													<li class="menu-item"><a href="https://grevo-demo.pbminfotech.com/demo2/service/home-charging/">Home Charging Stations</a></li>
+													<li class="menu-item"><a href="https://grevo-demo.pbminfotech.com/demo2/service/commercial-systems/">Commercial Fast Chargers</a></li>
+													<li class="menu-item"><a href="https://grevo-demo.pbminfotech.com/demo2/product/battery-tester/">Battery &amp; Accessories</a></li>
+													<li class="menu-item"><a href="https://grevo-demo.pbminfotech.com/demo2/shop/">All Products</a></li>
+												</ul>
+											</li>
+											<li id="menu-item-contact" class="menu-item menu-item-type-post_type menu-item-object-page">
+												<a href="https://grevo-demo.pbminfotech.com/demo2/contact-us/">Contact Us</a>
+											</li>
+										</ul>
+									</div>
+								</nav><!-- #site-navigation -->
+							</div><!-- .wrap -->
+							<div class="thsn-right-box">
+								<div class="thsn-search-cart-box">
+									<div class="thsn-header-search-btn"><a href="#" title="Search"><i
+												class="thsn-base-icon-search-1"></i></a></div>
+								</div>
+							</div>
+						</div><!-- .navigation-top -->
+					</div>
+					<div class="thsn-button-box">
+						<div class="thsn-header-button2">
+							<a href="https://grevo-demo.pbminfotech.com/demo2/contact-us/">
+								<span>Get a quote</span>
+							</a>
+						</div>
+					</div>
+				</div><!-- .justify-content-between -->
+			</div><!-- .container -->
+		</div><!-- .thsn-header-wrapper -->
+	</div><!-- .thsn-header-height-wrapper -->
+</div><!--thsn-header-overlay -->
+<span class="thsn-social-label"></span>
+<ul class="thsn-social-links">
+	<li class="thsn-social-li thsn-social-facebook "><a href="#" target="_blank"><span><i
+					class="thsn-base-icon-facebook-squared"></i></span></a></li>
+	<li class="thsn-social-li thsn-social-twitter "><a href="#" target="_blank"><span><i
+					class="thsn-base-icon-twitter-x"></i></span></a></li>
+	<li class="thsn-social-li thsn-social-youtube "><a href="#" target="_blank"><span><i
+					class="thsn-base-icon-youtube-play"></i></span></a></li>
+	<li class="thsn-social-li thsn-social-linkedin "><a href="#" target="_blank"><span><i
+					class="thsn-base-icon-linkedin-squared"></i></span></a></li>
+</ul>`;
 
-  window.addEventListener('scroll', function () {
-    const scrollY = window.scrollY || window.pageYOffset;
+  async function loadHeaderComponent() {
+    const headerContainer = document.getElementById('site-header-component');
+    if (headerContainer && !headerContainer.innerHTML.trim()) {
+      try {
+        const response = await fetch('components/header.html');
+        if (response.ok) {
+          headerContainer.innerHTML = await response.text();
+        } else {
+          headerContainer.innerHTML = HEADER_FALLBACK;
+        }
+      } catch (e) {
+        // Fallback for file:// protocol or offline
+        headerContainer.innerHTML = HEADER_FALLBACK;
+      }
+    }
+    bindHeaderEvents();
+  }
 
-    // Sticky header toggle
-    if (scrollY > 120) {
-      if (mainHeader) mainHeader.classList.add('is-sticky');
-      if (masthead) masthead.classList.add('is-sticky');
-    } else {
-      if (mainHeader) mainHeader.classList.remove('is-sticky');
-      if (masthead) masthead.classList.remove('is-sticky');
+  function bindHeaderEvents() {
+    const mainHeader = document.querySelector('.thsn-main-header-area');
+    const masthead = document.getElementById('masthead');
+
+    // Sticky navigation scroll handler
+    function onScroll() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY > 120) {
+        if (mainHeader) mainHeader.classList.add('is-sticky');
+        if (masthead) masthead.classList.add('is-sticky');
+      } else {
+        if (mainHeader) mainHeader.classList.remove('is-sticky');
+        if (masthead) masthead.classList.remove('is-sticky');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll(); // initial state
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navTop = document.querySelector('.navigation-top');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.body.classList.toggle('thsn-mobile-menu-active');
+        if (navTop) navTop.classList.toggle('active');
+      });
     }
 
-    // Back to top visibility
+    // Mobile submenu accordion
+    const menuItemsWithChildren = document.querySelectorAll('#thsn-top-menu > li.menu-item-has-children > a');
+    menuItemsWithChildren.forEach(item => {
+      item.addEventListener('click', function (e) {
+        if (window.innerWidth < 1200) {
+          e.preventDefault();
+          const parent = this.parentElement;
+          parent.classList.toggle('open');
+          const sub = parent.querySelector('.sub-menu');
+          if (sub) {
+            sub.style.display = parent.classList.contains('open') ? 'block' : 'none';
+          }
+        }
+      });
+    });
+
+    // Re-bind search trigger in header
+    const headerSearchBtn = document.querySelector('.thsn-header-search-btn a');
+    if (headerSearchBtn) {
+      headerSearchBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openSearch();
+      });
+    }
+  }
+
+  // Load header component immediately
+  loadHeaderComponent();
+
+  // =========================================================================
+  // 1. Back to top button
+  // =========================================================================
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY || window.pageYOffset;
     if (backToTopBtn) {
       if (scrollY > 350) {
         backToTopBtn.classList.add('visible');
@@ -36,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Back to top click
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -46,36 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
-  // =========================================================================
-  // 2. Mobile Menu Drawer
-  // =========================================================================
-  const menuToggle = document.getElementById('menu-toggle');
-  const navTop = document.querySelector('.navigation-top');
-
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.body.classList.toggle('thsn-mobile-menu-active');
-      if (navTop) navTop.classList.toggle('active');
-    });
-  }
-
-  // Mobile submenu accordion
-  const menuItemsWithChildren = document.querySelectorAll('#thsn-top-menu > li.menu-item-has-children > a');
-  menuItemsWithChildren.forEach(item => {
-    item.addEventListener('click', function (e) {
-      if (window.innerWidth < 1200) {
-        e.preventDefault();
-        const parent = this.parentElement;
-        parent.classList.toggle('open');
-        const sub = parent.querySelector('.sub-menu');
-        if (sub) {
-          sub.style.display = parent.classList.contains('open') ? 'block' : 'none';
-        }
-      }
-    });
-  });
 
   // =========================================================================
   // 3. Single Interactive Search Overlay Controller

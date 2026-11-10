@@ -44,6 +44,10 @@ body {
   box-shadow: none !important;
 }
 
+#site-header-component {
+  display: contents !important;
+}
+
 #masthead.is-sticky,
 .thsn-header-overlay,
 .thsn-header-height-wrapper {
