@@ -96,6 +96,10 @@ c:/Users/ADMIN/Documents/img/ev/
 ## 🎨 Brand Identity
 
 - **Brand Name**: `JOY ECO AUTOMOTIVES`
+- **Address**: Opp. Alwalapuram Road, Main Road, KODAD, Suryapet District, Telangana - 508206
+- **Phone**: +91 95500 03306 / +91 94942 54507
+- **Email**: info@joyecoautomotives.com
+- **Website**: www.joyecoautomotives.com
 - **Primary Color**: `#8cc63f` (Eco Electric Green)
 - **Dark Neutral**: `#131419` / `#101010`
 - **Surface Background**: `#eff3f5`
