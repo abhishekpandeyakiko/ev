@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById(id);
     if (!el) return;
     try {
-      const res = await fetch(file);
+      const res = await fetch(file + '?v=' + Date.now());
       if (res.ok) el.innerHTML = await res.text();
     } catch (_) { }
     if (callback) callback();
