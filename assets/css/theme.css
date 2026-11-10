@@ -33819,9 +33819,10 @@ ul.thsn-timelist-list .thsn-timelist-li-value {
 .thsn-footer-text-area ul.thsn-social-links li a {
     display: block;
     border: 1px solid rgba(255, 255, 255, 0.30);
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 45px;
+    height: 45px;
+    line-height: 43px;
+    font-size: 21px;
     text-align: center
 }
 

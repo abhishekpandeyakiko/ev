@@ -1386,6 +1386,7 @@ textarea:focus,
     margin-bottom: 20px !important;
     vertical-align: middle;
 }
+
 .thsn-footer-newsletter .thsn-base-icon-mail-box:before {
     font-family: 'themesion-base-icons' !important;
     color: #ffffff !important;
@@ -1437,7 +1438,7 @@ textarea:focus,
 .thsn-footer-text-area .thsn-social-links {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 6px;
     list-style: none;
     margin: 0;
     padding: 0;

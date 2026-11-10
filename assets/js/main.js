@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const input = form.querySelector('input[type="email"]');
         if (input && input.value) {
-          alert('Thank you for subscribing to Grevo EV updates!');
+          alert('Thank you for subscribing to JOY ECO AUTOMOTIVES updates!');
           input.value = '';
         }
       });
