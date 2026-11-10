@@ -35094,7 +35094,7 @@ button:focus {
 }
 
 .thsn-footer-widget a.btn-arrow span:after {
-    top: 4px
+    top: 1px
 }
 
 .thsn-company-hostory .simple-text p {
@@ -38677,7 +38677,14 @@ body.rtl .e-con {
 
 .elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)) .elementor-widget-container,
 .elementor-element:where(:not(.e-con)):where(:not(.e-div-block-base)):not(:has(.elementor-widget-container)) {
-    transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, transform var(--e-transform-transition-duration, .4s)
+    transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, transform var(--e-transform-transition-duration, .4s);
+
+
+}
+
+.about-section-count {
+    justify-content: flex-end;
+    display: flex;
 }
 
 .elementor-heading-title {
