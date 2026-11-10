@@ -121,63 +121,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 5. TESTIMONIALS CAROUSEL (Auto-slide, dots, swipe)
   // --------------------------------------------------------------------------
-  const track = document.getElementById('customTestiTrack');
-  const viewport = document.getElementById('customTestiViewport');
+  function initTestimonials() {
+    const track = document.getElementById('customTestiTrack');
+    const viewport = document.getElementById('customTestiViewport');
 
-  if (track && viewport) {
-    const slides = track.querySelectorAll('.custom-testi-slide');
-    const dots = document.querySelectorAll('#customTestiDots .dot-btn');
-    let currentIdx = 0;
-    let timer = null;
+    if (track && viewport) {
+      const slides = track.querySelectorAll('.custom-testi-slide');
+      const dots = document.querySelectorAll('#customTestiDots .dot-btn');
+      let currentIdx = 0;
+      let timer = null;
 
-    const goToSlide = (index) => {
-      currentIdx = (index + slides.length) % slides.length;
-      track.style.transform = `translateX(-${currentIdx * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIdx));
-    };
+      const goToSlide = (index) => {
+        currentIdx = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIdx * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIdx));
+      };
 
-    const startAutoPlay = () => {
-      clearInterval(timer);
-      timer = setInterval(() => goToSlide(currentIdx + 1), 5000);
-    };
+      const startAutoPlay = () => {
+        clearInterval(timer);
+        timer = setInterval(() => goToSlide(currentIdx + 1), 5000);
+      };
 
-    startAutoPlay();
-
-    document.getElementById('customTestiPrev')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      goToSlide(currentIdx - 1);
       startAutoPlay();
-    });
 
-    document.getElementById('customTestiNext')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      goToSlide(currentIdx + 1);
-      startAutoPlay();
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', function () {
-        goToSlide(parseInt(this.getAttribute('data-index'), 10));
+      document.getElementById('customTestiPrev')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentIdx - 1);
         startAutoPlay();
       });
-    });
 
-    viewport.addEventListener('mouseenter', () => clearInterval(timer));
-    viewport.addEventListener('mouseleave', startAutoPlay);
+      document.getElementById('customTestiNext')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentIdx + 1);
+        startAutoPlay();
+      });
 
-    // Touch Swipe for Mobile / Tablet
-    let startX = 0;
-    viewport.addEventListener('touchstart', e => {
-      startX = e.changedTouches[0].screenX;
-      clearInterval(timer);
-    }, { passive: true });
+      dots.forEach(dot => {
+        dot.addEventListener('click', function () {
+          goToSlide(parseInt(this.getAttribute('data-index'), 10));
+          startAutoPlay();
+        });
+      });
 
-    viewport.addEventListener('touchend', e => {
-      const diff = startX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 40) goToSlide(diff > 0 ? currentIdx + 1 : currentIdx - 1);
-      startAutoPlay();
-    }, { passive: true });
+      viewport.addEventListener('mouseenter', () => clearInterval(timer));
+      viewport.addEventListener('mouseleave', startAutoPlay);
+
+      // Touch Swipe for Mobile / Tablet
+      let startX = 0;
+      viewport.addEventListener('touchstart', e => {
+        startX = e.changedTouches[0].screenX;
+        clearInterval(timer);
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) goToSlide(diff > 0 ? currentIdx + 1 : currentIdx - 1);
+        startAutoPlay();
+      }, { passive: true });
+    }
   }
+
+  initTestimonials();
 
 
   // --------------------------------------------------------------------------
@@ -271,5 +275,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initScrollReveal();
+
+  // --------------------------------------------------------------------------
+  // 10. SPA ROUTE CHANGE HANDLER (Re-initialize on route changes)
+  // --------------------------------------------------------------------------
+  window.addEventListener('pageRendered', () => {
+    handleWidthsAndImages();
+    runCounters();
+    initTestimonials();
+    initScrollReveal();
+  });
 
 });
