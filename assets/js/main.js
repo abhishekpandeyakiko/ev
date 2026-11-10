@@ -223,4 +223,40 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', handleWidthsAndImages, { passive: true });
   window.addEventListener('load', handleWidthsAndImages);
 
+
+  // --------------------------------------------------------------------------
+  // 9. SCROLL REVEAL TEXT SLIDE ANIMATIONS (Like Grevo Demo2)
+  // --------------------------------------------------------------------------
+  const initScrollReveal = () => {
+    const targets = document.querySelectorAll(
+      '.thsn-element-subtitle, .thsn-element-title, .thsn-heading-desc, .thsn-ihbox, .thsn-pricing-table-box, .thsn-fld-wrap'
+    );
+
+    if ('IntersectionObserver' in window && targets.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-inview');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+      );
+
+      targets.forEach((el) => {
+        if (!el.closest('.thsn-slider-area')) {
+          observer.observe(el);
+        } else {
+          el.classList.add('is-inview');
+        }
+      });
+    } else {
+      targets.forEach((el) => el.classList.add('is-inview'));
+    }
+  };
+
+  initScrollReveal();
+
 });

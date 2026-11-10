@@ -2496,6 +2496,13 @@ body {
   z-index: 25 !important;
 }
 
+/* Masked Title with Smooth Slide-in Animation (Grevo Demo2 Style) */
+.sr7-title-mask {
+  overflow: hidden !important;
+  position: relative !important;
+  margin-bottom: 30px !important;
+}
+
 .sr7-title {
   font-family: var(--thsn-font-heading) !important;
   font-size: 56px !important;
@@ -2503,7 +2510,21 @@ body {
   line-height: 1.15 !important;
   letter-spacing: -1px !important;
   color: #ffffff !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 0 !important;
+  display: block !important;
+  animation: sr7SlideTitleIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both !important;
+}
+
+@keyframes sr7SlideTitleIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .sr7-title .thsn-blackish-color {
@@ -2511,7 +2532,7 @@ body {
   white-space: nowrap !important;
 }
 
-/* Specs Grid */
+/* Specs Grid with Staggered Slide-up Animation */
 .sr7-specs-grid {
   display: flex !important;
   gap: 48px !important;
@@ -2523,6 +2544,31 @@ body {
   flex-direction: column !important;
   align-items: flex-start !important;
   min-width: 90px !important;
+  animation: sr7SlideSpecIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+.sr7-spec-col.col-1 {
+  animation-delay: 0.25s !important;
+}
+
+.sr7-spec-col.col-2 {
+  animation-delay: 0.35s !important;
+}
+
+.sr7-spec-col.col-3 {
+  animation-delay: 0.45s !important;
+}
+
+@keyframes sr7SlideSpecIn {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .sr7-spec-icon {
@@ -2549,7 +2595,12 @@ body {
   text-transform: capitalize !important;
 }
 
-/* Book Now CTA Button */
+/* Book Now CTA Button with Mask and Slide-up */
+.sr7-btn-mask {
+  overflow: hidden !important;
+  display: inline-block !important;
+}
+
 .sr7-book-btn {
   display: inline-flex !important;
   align-items: center !important;
@@ -2568,6 +2619,19 @@ body {
   text-decoration: none !important;
   box-shadow: 0 10px 25px rgba(19, 20, 25, 0.25) !important;
   transition: all 0.3s ease !important;
+  animation: sr7SlideBtnIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both !important;
+}
+
+@keyframes sr7SlideBtnIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .sr7-book-btn:hover {
@@ -2598,7 +2662,6 @@ body {
   z-index: 2 !important;
   opacity: 0.95 !important;
   pointer-events: none !important;
-  /* animation: rotateRoundGlow 40s linear infinite !important; */
 }
 
 @keyframes rotateRoundGlow {
@@ -2611,7 +2674,7 @@ body {
   }
 }
 
-/* Cleanly positioned Scooter on the right half so charger never touches title or menu */
+/* Cleanly positioned Scooter with Slide-in + subtle float */
 .sr7-scooter-main {
   position: absolute !important;
   right: -130px !important;
@@ -2623,7 +2686,19 @@ body {
   z-index: 10 !important;
   display: block !important;
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2)) !important;
-  animation: floatScooter 4.5s ease-in-out infinite !important;
+  animation: sr7SlideScooterIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both, floatScooter 4.5s ease-in-out 1.4s infinite !important;
+}
+
+@keyframes sr7SlideScooterIn {
+  0% {
+    transform: translateX(140px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes floatScooter {
@@ -3611,6 +3686,44 @@ body {
   display: block;
   max-width: 456px;
   height: auto;
+}
+
+/* ==========================================================================
+   SCROLL REVEAL TEXT SLIDE ANIMATIONS (Like Grevo Demo2)
+   ========================================================================== */
+.thsn-element-subtitle,
+.thsn-element-title,
+.thsn-heading-desc,
+.thsn-ihbox,
+.thsn-pricing-table-box,
+.thsn-fld-wrap {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.thsn-element-subtitle.is-inview,
+.thsn-element-title.is-inview,
+.thsn-heading-desc.is-inview,
+.thsn-ihbox.is-inview,
+.thsn-pricing-table-box.is-inview,
+.thsn-fld-wrap.is-inview {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Staggered delay for heading blocks */
+.thsn-heading-subheading .thsn-element-subtitle {
+  transition-delay: 0.1s !important;
+}
+
+.thsn-heading-subheading .thsn-element-title {
+  transition-delay: 0.25s !important;
+}
+
+.thsn-heading-subheading .thsn-heading-desc {
+  transition-delay: 0.4s !important;
 }
 
 .e-con.e-parent:not(.e-lazyloaded) {

@@ -34581,7 +34581,7 @@ ul.thsn-timelist-list .thsn-timelist-li-value {
     margin: 0 auto;
     position: relative;
     text-align: center;
-    top: 50%;
+    top: 0%;
     left: 0;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
