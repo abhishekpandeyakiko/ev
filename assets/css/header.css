@@ -163,7 +163,7 @@
 
   .thsn-header-style-3 .thsn-social-links {
     position: absolute;
-    top: 50%;
+    top: 440px;
     left: 0;
     height: auto;
     z-index: 10;
@@ -223,7 +223,7 @@
 
   .thsn-header-style-3 .thsn-social-label::before {
     position: absolute;
-    top: 26%;
+    top: 240px;
     left: 0;
     display: block;
     content: "follow us";
@@ -246,7 +246,7 @@
     height: 80px;
     background-color: rgba(var(--thsn-grevo-blackish-bg-color-rgb), 50%);
     position: absolute;
-    top: 30%;
+    top: 300px;
     left: 0;
     z-index: 18;
     -khtml-transform: translate(90px, 50px);
@@ -938,8 +938,8 @@ body:not(.home) .thsn-header-overlay {
   font-size: 12px !important;
 }
 
-/* Hide conflicting left social elements on screens < 1500px to maintain pristine spacing */
-@media (max-width: 1500px) {
+/* Hide conflicting left social elements on screens < 1350px to maintain pristine spacing */
+@media (max-width: 1350px) {
 
   .site-header.thsn-header-style-3 .thsn-social-links,
   .site-header.thsn-header-style-3 .thsn-social-label {
