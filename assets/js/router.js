@@ -9,31 +9,31 @@
 
   const routes = {
     '/': {
-      component: 'components/home.html',
+      component: 'page/home.html',
       title: 'JOY ECO AUTOMOTIVES – Electric Vehicle & Charging Solutions',
       menuId: 'menu-item-home',
       isHome: true
     },
     '/home': {
-      component: 'components/home.html',
+      component: 'page/home.html',
       title: 'JOY ECO AUTOMOTIVES – Electric Vehicle & Charging Solutions',
       menuId: 'menu-item-home',
       isHome: true
     },
     '/about': {
-      component: 'components/about.html',
+      component: 'page/about.html',
       title: 'About Us – JOY ECO AUTOMOTIVES',
       menuId: 'menu-item-about',
       isHome: false
     },
     '/products': {
-      component: 'components/products.html',
+      component: 'page/products.html',
       title: 'Products – JOY ECO AUTOMOTIVES',
       menuId: 'menu-item-products',
       isHome: false
     },
     '/contact': {
-      component: 'components/contact.html',
+      component: 'page/contact.html',
       title: 'Contact Us – JOY ECO AUTOMOTIVES',
       menuId: 'menu-item-contact',
       isHome: false
