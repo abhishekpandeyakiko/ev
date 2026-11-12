@@ -1364,7 +1364,7 @@ sr7-txt .material-icons {
 }
 
 .thsn-ihbox-style-5 .thsn-element-title {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 28px;
   margin-bottom: 5px
 }
@@ -1457,7 +1457,7 @@ sr7-txt .material-icons {
 }
 
 .thsn-ihbox-style-6 .thsn-element-title {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 28px;
   margin-bottom: 5px
 }
@@ -2710,8 +2710,8 @@ body {
   visibility: hidden !important;
   transform: translateX(110px) scale(0.97) !important;
   transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.85s !important;
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.85s !important;
   pointer-events: none !important;
   will-change: transform, opacity !important;
 }
