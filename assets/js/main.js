@@ -277,6 +277,92 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
 
   // --------------------------------------------------------------------------
+  // 11. HERO IMAGE DUAL-VEHICLE SLIDER (Scooter <-> E-Rickshaw)
+  // --------------------------------------------------------------------------
+  function initHeroImageSlider() {
+    const wrap = document.querySelector('.sr7-hero-slider-wrap');
+    if (!wrap) return;
+
+    const slides = wrap.querySelectorAll('.sr7-hero-slide');
+    const dots = document.querySelectorAll('.sr7-nav-dot');
+    if (slides.length <= 1) return;
+
+    if (window._heroSliderTimer) {
+      clearInterval(window._heroSliderTimer);
+      window._heroSliderTimer = null;
+    }
+
+    let currentIndex = 0;
+    let isTransitioning = false;
+
+    slides.forEach((s, i) => {
+      if (s.classList.contains('active')) currentIndex = i;
+    });
+
+    function goToSlide(newIndex, direction = 'next') {
+      if (isTransitioning || newIndex === currentIndex) return;
+      isTransitioning = true;
+
+      const currentSlide = slides[currentIndex];
+      const targetSlide = slides[newIndex];
+
+      slides.forEach(s => s.classList.remove('slide-out-left', 'slide-out-right'));
+
+      currentSlide.classList.remove('active');
+      currentSlide.classList.add(direction === 'next' ? 'slide-out-left' : 'slide-out-right');
+
+      targetSlide.classList.remove('slide-out-left', 'slide-out-right');
+      targetSlide.classList.add('active');
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === newIndex);
+      });
+
+      currentIndex = newIndex;
+
+      setTimeout(() => {
+        slides.forEach(s => {
+          if (!s.classList.contains('active')) {
+            s.classList.remove('slide-out-left', 'slide-out-right');
+          }
+        });
+        isTransitioning = false;
+      }, 850);
+    }
+
+    function autoNext() {
+      const nextIdx = (currentIndex + 1) % slides.length;
+      goToSlide(nextIdx, 'next');
+    }
+
+    window._heroSliderTimer = setInterval(autoNext, 4500);
+
+    wrap.onmouseenter = () => {
+      if (window._heroSliderTimer) clearInterval(window._heroSliderTimer);
+    };
+    wrap.onmouseleave = () => {
+      if (window._heroSliderTimer) clearInterval(window._heroSliderTimer);
+      window._heroSliderTimer = setInterval(autoNext, 4500);
+    };
+
+    dots.forEach(dot => {
+      dot.onclick = (e) => {
+        e.preventDefault();
+        const targetIdx = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(targetIdx) && targetIdx !== currentIndex) {
+          goToSlide(targetIdx, targetIdx > currentIndex ? 'next' : 'prev');
+          if (window._heroSliderTimer) {
+            clearInterval(window._heroSliderTimer);
+            window._heroSliderTimer = setInterval(autoNext, 4500);
+          }
+        }
+      };
+    });
+  }
+
+  initHeroImageSlider();
+
+  // --------------------------------------------------------------------------
   // 10. SPA ROUTE CHANGE HANDLER (Re-initialize on route changes)
   // --------------------------------------------------------------------------
   window.addEventListener('pageRendered', () => {
@@ -284,6 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     runCounters();
     initTestimonials();
     initScrollReveal();
+    initHeroImageSlider();
   });
 
 });
