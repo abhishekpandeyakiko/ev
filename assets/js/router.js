@@ -107,6 +107,14 @@
       // Render component HTML
       outlet.innerHTML = html;
 
+      // Execute any inline scripts inside the component
+      outlet.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+
       // Update page title
       document.title = route.title;
 

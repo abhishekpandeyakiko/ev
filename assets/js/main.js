@@ -371,6 +371,51 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonials();
     initScrollReveal();
     initHeroImageSlider();
+    initSavingsCalculator();
   });
+
+  // --------------------------------------------------------------------------
+  // 11. EV FUEL SAVINGS CALCULATOR
+  // --------------------------------------------------------------------------
+  function initSavingsCalculator() {
+    const slider = document.getElementById('calcSliderNative');
+    if (!slider) return;
+
+    window.calculateSavings = function (val) {
+      const km = parseInt(val, 10) || 60;
+      const monthlyKm = km * 30;
+      const petrolCost = Math.round(monthlyKm * 3.50);
+      const evCost = Math.round(monthlyKm * 0.15);
+      const monthlySavings = petrolCost - evCost;
+      const yearlySavings = monthlySavings * 12;
+
+      const kmEl = document.getElementById('calcKmVal');
+      if (kmEl) kmEl.textContent = km;
+
+      const monthlyEl = document.getElementById('calcMonthlyVal');
+      if (monthlyEl) monthlyEl.textContent = '₹' + monthlySavings.toLocaleString('en-IN');
+
+      const petrolSub = document.getElementById('calcPetrolSub');
+      if (petrolSub) petrolSub.textContent = '₹' + petrolCost.toLocaleString('en-IN');
+
+      const evSub = document.getElementById('calcEvSub');
+      if (evSub) evSub.textContent = '₹' + evCost.toLocaleString('en-IN');
+
+      const yearlyEl = document.getElementById('calcYearlyVal');
+      if (yearlyEl) yearlyEl.textContent = '₹' + yearlySavings.toLocaleString('en-IN');
+    };
+
+    slider.addEventListener('input', function () {
+      window.calculateSavings(this.value);
+    });
+
+    slider.addEventListener('change', function () {
+      window.calculateSavings(this.value);
+    });
+
+    window.calculateSavings(slider.value || 60);
+  }
+
+  initSavingsCalculator();
 
 });

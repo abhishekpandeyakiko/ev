@@ -105,12 +105,12 @@
 														<div class="thsn-fld-wrap">
 															<h4 class="thsn-fid-inner">
 																<span class="thsn-number-rotate"
-																	data-appear-animation="animateDigits" data-from="35"
-																	data-to="35" data-interval="5">35</span><span
+																	data-appear-animation="animateDigits" data-from="85"
+																	data-to="85" data-interval="5">85</span><span
 																	class="thsn-fid"><sup>%</sup></span>
 															</h4>
 															<div class="thsn-fid-title">
-																<span>Clients</span>
+																<span>Savings</span>
 															</div>
 														</div>
 													</div><!-- .thsn-fld-contents -->
@@ -153,18 +153,15 @@
 													class="thsn-heading-subheading left-align thsn-reverse-heading-yes">
 													<h4 class="thsn-element-subtitle">
 
-														What we do!
+														About Joy Eco
 
 													</h4>
 													<h2 class="thsn-element-title">
 
-														Our mission is to put an electric vehicle charge
+														Pioneering Zero-Emission Electric Mobility
 
 													</h2>
-													<div class="thsn-heading-desc">Charge your electric
-														vehicle at home using one of our smart home char
-														ge solutions or gain access to over 3,000 public
-														charging.</div>
+													<div class="thsn-heading-desc">Joy Eco Automotives delivers high-performance electric 2-wheelers and commercial 3-wheelers built for Indian roads.</div>
 												</div>
 											</div>
 										</div>
@@ -193,17 +190,13 @@
 																			<div class="thsn-heading-wrapper">
 																				<h2 class="thsn-element-title">
 
-																					Zero contact travel
+																					Low Running Cost
 
 																				</h2>
 																			</div>
 																		</div>
 																		<div class="thsn-ihbox-contents">
-																			<div class="thsn-heading-desc">
-																				We love our customers
-																				and we love the way they
-																				come.
-																			</div>
+																			<div class="thsn-heading-desc">Ultra-low running cost of ₹0.15/km with maximum fuel savings.</div>
 																		</div>
 																		<!-- .thsn-ihbox-contents -->
 																	</div>
@@ -233,17 +226,13 @@
 																			<div class="thsn-heading-wrapper">
 																				<h2 class="thsn-element-title">
 
-																					No Driving License
+																					Govt. Certified
 
 																				</h2>
 																			</div>
 																		</div>
 																		<div class="thsn-ihbox-contents">
-																			<div class="thsn-heading-desc">
-																				We love our customers
-																				and we love the way they
-																				come.
-																			</div>
+																			<div class="thsn-heading-desc">Registered EV manufacturer eligible for state green subsidies.</div>
 																		</div>
 																		<!-- .thsn-ihbox-contents -->
 																	</div>
@@ -263,17 +252,13 @@
 														<span class="elementor-icon-list-icon">
 															<i aria-hidden="true" class="mdi mdi-check-circle"></i>
 														</span>
-														<span class="elementor-icon-list-text">Detachable
-															battery, take home and charge in 3
-															hours.</span>
+														<span class="elementor-icon-list-text">High-capacity lithium battery with smart fast charging.</span>
 													</li>
 													<li class="elementor-icon-list-item">
 														<span class="elementor-icon-list-icon">
 															<i aria-hidden="true" class="mdi mdi-check-circle"></i>
 														</span>
-														<span class="elementor-icon-list-text">Enjoy a
-															hassle-free ride by charging just for 3
-															hours. </span>
+														<span class="elementor-icon-list-text">Heavy-duty payload capacity engineered for local business.</span>
 													</li>
 												</ul>
 											</div>
@@ -284,7 +269,7 @@
 											<div class="elementor-widget-container">
 												<div class="elementor-button-wrapper">
 													<a class="elementor-button elementor-button-link elementor-size-md"
-														href="https://grevo-demo.pbminfotech.com/demo1/about-us/"
+														href="about.html"
 														target="_blank">
 														<span class="elementor-button-content-wrapper">
 															<span class="elementor-button-text">Read
@@ -298,7 +283,7 @@
 								</div>
 							</div>
 						</section>
-						<section
+																		<section
 							class="elementor-section elementor-top-section elementor-element elementor-element-a4f2710 thsn-col-stretched-none thsn-bg-color-over-image elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 							data-id="a4f2710" data-element_type="section" data-e-type="section">
 							<div class="elementor-container elementor-column-gap-no">
@@ -312,18 +297,23 @@
 												<div class="themesion-ele themesion-ele-fid themesion-ele-fid-style-2 ">
 													<div class="thsn-fld-contents">
 														<div class="thsn-fld-wrap">
-															<h4 class="thsn-fid-inner">
-																<span class="thsn-number-rotate"
-																	data-appear-animation="animateDigits"
-																	data-from="245" data-to="245"
-																	data-interval="5">245</span><span
-																	class="thsn-fid"><sup>m</sup></span>
+															<h4 class="thsn-fid-inner" style="display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 2px;">
+																<span id="calcKmVal" style="color: #161c2d; font-size: 50px; font-weight: 800; line-height: 1;">60</span><span
+																	class="thsn-fid" style="color: #8cc63f; font-size: 20px; font-weight: 700;"><sup>km/day</sup></span>
 															</h4>
-															<div class="thsn-fid-title"><span>Check
-																	charge status remotely
-																	through Ether app</span></div>
+															<div style="max-width: 200px; margin: 6px auto 2px;">
+																<input type="range" id="calcSliderNative" min="20" max="150" step="5" value="60"
+																	style="width: 100%; height: 6px; accent-color: #8cc63f; cursor: pointer; display: block;"
+																	oninput="calculateSavings(this.value)">
+																<div style="display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-top: 3px;">
+																	<span>20 km</span>
+																	<span>85 km</span>
+																	<span>150 km</span>
+																</div>
+															</div>
+															<div class="thsn-fid-title"><span>Daily Travel Distance</span></div>
 														</div>
-													</div><!-- .thsn-fld-contents -->
+													</div>
 												</div>
 											</div>
 										</div>
@@ -339,50 +329,78 @@
 												<div class="themesion-ele themesion-ele-fid themesion-ele-fid-style-2 ">
 													<div class="thsn-fld-contents">
 														<div class="thsn-fld-wrap">
-															<h4 class="thsn-fid-inner">
-																<span class="thsn-number-rotate"
-																	data-appear-animation="animateDigits"
-																	data-from="220" data-to="220"
-																	data-interval="5">220</span><span
-																	class="thsn-fid"><sup>+</sup></span>
+															<h4 class="thsn-fid-inner" style="display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 2px;">
+																<span id="calcMonthlyVal" style="color: #161c2d; font-size: 50px; font-weight: 800; line-height: 1;">₹6,030</span><span
+																	class="thsn-fid" style="color: #8cc63f; font-size: 20px; font-weight: 700;"><sup>/mo</sup></span>
 															</h4>
-															<div class="thsn-fid-title"><span>Check
-																	charge status remotely
-																	through Ether app</span></div>
+															<div style="font-size: 13px; color: #777; margin: 6px 0 4px;">
+																Petrol <span id="calcPetrolSub" style="color: #e53e3e; font-weight: 600;">₹6,300</span> vs EV <span id="calcEvSub" style="color: #38a169; font-weight: 600;">₹270</span>
+															</div>
+															<div class="thsn-fid-title"><span>Monthly Fuel Savings</span></div>
 														</div>
-													</div><!-- .thsn-fld-contents -->
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-9e677db thsn-bg-color-over-image"
-									data-id="9e677db" data-element_type="column" data-e-type="column">
+								<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e17f0aa thsn-bg-color-over-image"
+									data-id="e17f0aa" data-element_type="column" data-e-type="column">
 									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-3ccef4a elementor-widget elementor-widget-thsn_fid_element"
-											data-id="3ccef4a" data-element_type="widget" data-e-type="widget"
+										<div class="elementor-element elementor-element-fcbca9f elementor-widget elementor-widget-thsn_fid_element"
+											data-id="fcbca9f" data-element_type="widget" data-e-type="widget"
 											data-widget_type="thsn_fid_element.default">
 											<div class="elementor-widget-container">
 												<div class="themesion-ele themesion-ele-fid themesion-ele-fid-style-2 ">
 													<div class="thsn-fld-contents">
 														<div class="thsn-fld-wrap">
-															<h4 class="thsn-fid-inner">
-																<span class="thsn-number-rotate"
-																	data-appear-animation="animateDigits" data-from="50"
-																	data-to="50" data-interval="5">50</span><span
-																	class="thsn-fid"><sup>k</sup></span>
+															<h4 class="thsn-fid-inner" style="display: flex; align-items: baseline; justify-content: center; gap: 4px; margin-bottom: 2px;">
+																<span id="calcYearlyVal" style="color: #8cc63f; font-size: 50px; font-weight: 800; line-height: 1;">₹72,360</span><span
+																	class="thsn-fid" style="color: #8cc63f; font-size: 20px; font-weight: 700;"><sup>/yr</sup></span>
 															</h4>
-															<div class="thsn-fid-title"><span>Check
-																	charge status remotely
-																	through Ether app</span></div>
+															<div style="font-size: 13px; color: #777; margin: 6px 0 4px;">
+																Save ~95% with ₹0.15/km running cost
+															</div>
+															<div class="thsn-fid-title"><span>Annual Money Saved</span></div>
 														</div>
-													</div><!-- .thsn-fld-contents -->
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<script>
+								(function() {
+									window.calculateSavings = function(km) {
+										km = parseInt(km, 10);
+										var monthlyKm = km * 30;
+										var petrolCost = Math.round(monthlyKm * 3.50);
+										var evCost = Math.round(monthlyKm * 0.15);
+										var monthlySavings = petrolCost - evCost;
+										var yearlySavings = monthlySavings * 12;
+
+										var kmEl = document.getElementById('calcKmVal');
+										if (kmEl) kmEl.textContent = km;
+
+										var monthlyEl = document.getElementById('calcMonthlyVal');
+										if (monthlyEl) monthlyEl.textContent = '₹' + monthlySavings.toLocaleString('en-IN');
+
+										var petrolSub = document.getElementById('calcPetrolSub');
+										if (petrolSub) petrolSub.textContent = '₹' + petrolCost.toLocaleString('en-IN');
+
+										var evSub = document.getElementById('calcEvSub');
+										if (evSub) evSub.textContent = '₹' + evCost.toLocaleString('en-IN');
+
+										var yearlyEl = document.getElementById('calcYearlyVal');
+										if (yearlyEl) yearlyEl.textContent = '₹' + yearlySavings.toLocaleString('en-IN');
+									};
+									// Init
+									setTimeout(function() {
+										if (window.calculateSavings) window.calculateSavings(60);
+									}, 100);
+								})();
+							</script>
 						</section>
 						<div class="elementor-section elementor-top-section elementor-element elementor-element-a6c0e59 thsn-col-stretched-both elementor-section-stretched thsn-streched-col-2 thsn-bg-color-over-image elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 							data-id="a6c0e59" data-element_type="section" data-e-type="section"
