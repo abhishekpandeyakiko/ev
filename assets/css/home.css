@@ -3565,11 +3565,24 @@ body {
 .custom-testi-avatar {
   width: 62px;
   height: 62px;
+  min-width: 62px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 16px;
   border: 2.5px solid #8cc63f;
   box-shadow: 0 4px 15px rgba(140, 198, 63, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f7ea 0%, #e1f2d5 100%);
+  color: #8cc63f;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.custom-testi-avatar i {
+  color: #8cc63f;
+  line-height: 1;
 }
 
 .custom-testi-name {
@@ -3732,6 +3745,8 @@ body {
   .custom-testi-avatar {
     width: 52px;
     height: 52px;
+    min-width: 52px;
+    font-size: 22px;
   }
 }
 
@@ -3769,14 +3784,31 @@ body {
 }
 
 
+.elementor-17082 .elementor-element.elementor-element-848d6cc {
+  position: relative !important;
+  min-height: 520px !important;
+}
+
+.elementor-17082 .elementor-element.elementor-element-83331a9,
 .elementor-element-83331a9 {
   display: block !important;
   position: absolute !important;
   left: -20px !important;
-  bottom: 0 !important;
+  bottom: 0px !important;
   top: auto !important;
   right: auto !important;
+  width: auto !important;
+  max-width: 470px !important;
   z-index: 1;
+}
+
+.elementor-17082 .elementor-element.elementor-element-83331a9 img {
+  max-width: 470px !important;
+  height: auto !important;
+}
+
+.thsn-pricing-table-box .thsn-ptable-btn a {
+  padding: 16px 20px !important;
 }
 
 .elementor-element-83331a9>.elementor-widget-container {
