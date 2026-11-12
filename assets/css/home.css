@@ -451,22 +451,7 @@ body.rtl .elementor-17082 .elementor-element.elementor-element-83331a9 {
   --spacer-size: 50px;
 }
 
-.elementor-17082 .elementor-element.elementor-element-a1edd50 {
-  padding: 100px 0px 70px 0px;
-}
 
-.elementor-17082 .elementor-element.elementor-element-ef4569d>.elementor-container>.elementor-column>.elementor-widget-wrap {
-  align-content: center;
-  align-items: center;
-}
-
-.elementor-17082 .elementor-element.elementor-element-5303357 .thsn-heading-subheading {
-  text-align: left;
-}
-
-.elementor-17082 .elementor-element.elementor-element-caa9aa5 .thsn-ele-header-area {
-  text-align: left;
-}
 
 @media(min-width:768px) {
   .elementor-17082 .elementor-element.elementor-element-7685573 {
@@ -644,13 +629,7 @@ body.rtl .elementor-17082 .elementor-element.elementor-element-83331a9 {
     --e-column-margin-left: 15px;
   }
 
-  .elementor-17082 .elementor-element.elementor-element-a1edd50 {
-    padding: 70px 0px 50px 0px;
-  }
 
-  .elementor-17082 .elementor-element.elementor-element-a5dd1ef>.elementor-element-populated {
-    padding: 0px 30px 0px 30px;
-  }
 }
 
 @media(max-width:767px) {
@@ -760,14 +739,7 @@ body.rtl .elementor-17082 .elementor-element.elementor-element-83331a9 {
     padding: 100px 0px 100px 0px;
   }
 
-  .elementor-17082 .elementor-element.elementor-element-a1edd50 {
-    padding: 50px 0px 30px 0px;
-  }
 
-  .elementor-17082 .elementor-element.elementor-element-ef4569d {
-    margin-top: 0px;
-    margin-bottom: 30px;
-  }
 }
 
 @media(max-width:1200px) and (min-width:768px) {
@@ -1816,124 +1788,7 @@ sr7-txt .material-icons {
   transform: translateY(100%)
 }
 
-.thsn-blog-style-2 .thsn-featured-container {
-  position: relative
-}
 
-.thsn-blog-style-2 .thsn-featured-wrapper {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 30px 0
-}
-
-.thsn-blog-style-2 .thsn-featured-wrapper img {
-  position: relative;
-  width: 100%;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s
-}
-
-.thsn-blog-style-2:hover .thsn-featured-wrapper img {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2)
-}
-
-.thsn-blog-style-2 .themesion-box-content {
-  padding-left: 30px
-}
-
-.thsn-blog-style-2 .thsn-meta-date-wrapper {
-  position: absolute;
-  left: 30px;
-  bottom: 40px;
-  color: #fff;
-  font-size: 13px;
-  line-height: normal;
-  font-weight: 600;
-  display: inline-block;
-  text-transform: uppercase;
-  padding: 8px 25px 8px 25px;
-  border-radius: 15px 0 0;
-  background-color: var(--thsn-grevo-global-color);
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out
-}
-
-.thsn-blog-style-2 .themesion-content-wrapper {
-  position: relative;
-  margin-top: -40px;
-  padding: 35px 38px;
-  background-color: #fff;
-  box-shadow: 0 15px 40px 0 rgb(92 107 149 / 8%);
-  border-radius: 0 0 30px
-}
-
-.thsn-blog-style-2 .thsn-meta-line a,
-.thsn-blog-style-2 .thsn-meta-line {
-  font-size: 14px;
-  line-height: 20px;
-  color: #60626d;
-  text-transform: capitalize
-}
-
-.thsn-blog-style-2 .thsn-meta-line {
-  margin-right: 5px
-}
-
-.thsn-blog-style-2 .thsn-meta-line a:hover,
-.thsn-blog-style-2 .thsn-meta-line i {
-  color: var(--thsn-grevo-global-color)
-}
-
-.thsn-blog-style-2 .themesion-box-content .thsn-post-title {
-  font-size: 22px;
-  line-height: 30px;
-  margin-top: 7px;
-  margin-bottom: 10px
-}
-
-.thsn-blog-style-2:hover .thsn-meta-date-wrapper {
-  background-color: var(--thsn-grevo-blackish-bg-color)
-}
-
-.thsn-blog-style-2 .thsn-post-title a:hover {
-  color: var(--thsn-grevo-global-color)
-}
-
-.thsn-element-blog-style-2.themesion-element-blog .thsn-meta-comment-wrapper.thsn-meta-line:before {
-  display: none
-}
-
-.thsn-element-blog-style-2.themesion-element-blog .thsn-meta-comment-wrapper.thsn-meta-line {
-  padding-left: 0
-}
-
-@media (max-width:375px) {
-  .thsn-blog-style-2 .themesion-content-wrapper {
-    padding-left: 25px;
-    padding-right: 25px
-  }
-
-  .thsn-blog-style-2 .themesion-box-content {
-    padding-left: 25px
-  }
-
-  .thsn-blog-style-2 .thsn-meta-date-wrapper {
-    left: 25px
-  }
-
-  .thsn-blog-style-2 .thsn-meta-line a,
-  .thsn-blog-style-2 .thsn-meta-line {
-    font-size: 13px
-  }
-
-  .thsn-blog-style-2 .themesion-box-content .thsn-post-title {
-    font-size: 20px
-  }
-}
 
 /* ==========================================================================
    In-page Styles (Extracted from index.html)
